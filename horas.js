@@ -17,6 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
     alert(finalFinal);
 
     temporizador = finalFinal - actual;
-    alert(temporizador);
+    alert(new Date(temporizador));
+
+    let segundosTotales = math.floor(temporizador / 1000);
+    let minutosTotales = math.floor(segundosTotales / 60);
+    let horasTotales = math.floor(minutosTotales / 60);
+    let diasTotales = math.floor(horasTotales / 24);
+
+    let horas = horasTotales % 24;
+    let minutos = minutosTotales % 60;
+    let segundos = segundosTotales % 60;
+
+    document.getElementById("crono").innerHTML = diasTotales + " días, " + horas + " horas, " + minutos + " minutos y " + segundos + " segundos.";
 
 });
